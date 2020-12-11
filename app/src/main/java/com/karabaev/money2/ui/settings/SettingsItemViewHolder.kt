@@ -8,6 +8,9 @@ class SettingsItemViewHolder(private val view: View) : RecyclerView.ViewHolder(v
   fun bind(item: SettingsItemPresModel) {
     view.title.text = item.title
     view.subtitle.text = item.subtitle
-    itemView.icon.visibility = if (item.tapHandler == null) View.GONE else View.VISIBLE
+    view.icon.visibility = if (item.tapCommand == null) View.GONE else View.VISIBLE
+    view.setOnClickListener {
+      item.tapCommand?.invoke()
+    }
   }
 }
