@@ -1,7 +1,6 @@
 package com.karabaev.money2.model.references
 
 import org.joda.time.DateTime
-import java.util.*
 
 data class Unit(
   override var id: Int,
