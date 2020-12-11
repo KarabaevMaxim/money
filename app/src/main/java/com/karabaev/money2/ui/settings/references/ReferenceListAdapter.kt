@@ -1,4 +1,4 @@
-package com.karabaev.money2.ui.settings.reference
+package com.karabaev.money2.ui.settings.references
 
 import android.content.Context
 import android.view.LayoutInflater

@@ -10,6 +10,6 @@ class Unit(
   override var comment: String,
   override var iconPath: String,
   var baseUnitId: Int?,
-  var baseUnitMultiplier: Float?
-) : IReferenceRecord {
-}
+  var baseUnitMultiplier: Float?,
+  var abbreviate: String
+) : IReferenceRecord

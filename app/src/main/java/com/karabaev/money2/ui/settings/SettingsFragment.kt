@@ -9,7 +9,11 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.karabaev.money2.R
+import com.karabaev.money2.ui.settings.references.ReferenceListFragment
 import kotlinx.android.synthetic.main.fragment_settings.view.*
+
+
+
 
 class SettingsFragment : Fragment() {
   override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -24,9 +28,17 @@ class SettingsFragment : Fragment() {
 
   private fun getTestSettings() : List<SettingsItemPresModel> {
     val result = mutableListOf<SettingsItemPresModel>()
-    result.add(SettingsItemPresModel("Настройка 1", "Здесь находится настройка 1") {
-      Toast.makeText(activity, "Нажата настройка 1", Toast.LENGTH_SHORT).show()
+    result.add(SettingsItemPresModel("Единицы измерения", "Открыть справочник единиц измерения") {
+      Toast.makeText(activity, "Открываем единицы измерения", Toast.LENGTH_SHORT).show()
+
+      val id = (view?.parent as ViewGroup).id
+      val nextFrag = ReferenceListFragment()
+      activity!!.supportFragmentManager.beginTransaction()
+        .replace(id, nextFrag, "ReferenceListFragment")
+        .addToBackStack(null)
+        .commit()
     })
+
     result.add(SettingsItemPresModel("Настройка 2", "Здесь находится настройка 2") {
       Toast.makeText(activity, "Нажата настройка 2", Toast.LENGTH_SHORT).show()
     })
