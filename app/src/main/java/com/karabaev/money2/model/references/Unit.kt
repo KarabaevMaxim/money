@@ -1,11 +1,12 @@
 package com.karabaev.money2.model.references
 
+import org.joda.time.DateTime
 import java.util.*
 
-class Unit(
+data class Unit(
   override var id: Int,
   override var archived: Boolean,
-  override var createdDate: Date,
+  override var createdDate: DateTime,
   override var name: String,
   override var comment: String,
   override var iconPath: String,

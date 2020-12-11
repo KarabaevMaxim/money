@@ -1,11 +1,11 @@
 package com.karabaev.money2.model.common
 
-import java.util.*
+import org.joda.time.DateTime
 
 /**
  * Интерфейс модели, объекты которой может создавать пользователь.
  */
 interface ICreatableModel : IStorageModel {
-  var createdDate: Date
+  var createdDate: DateTime
   var archived: Boolean
 }
